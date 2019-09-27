@@ -5,6 +5,8 @@
  */
 package task3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jcn0852
@@ -16,7 +18,34 @@ public class Task3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        TrafficLightProblem problem = new TrafficLightProblem();
+        
+        String input = "";
+        Scanner scan = new Scanner(System.in);
+        
+        do {
+            System.out.println("Traffic Light 1");
+            System.out.println(problem.tf1);
+            
+            System.out.println("Traffic Light 1");
+            System.out.println(problem.tf1);
+            
+            System.out.println("Which light would you like to turn green?(1/2/exit)");
+            input = scan.nextLine();
+            
+            int lightNumber = Integer.parseInt(input);
+            
+            TrafficLight chosenTrafficLight = null;
+            
+            if(lightNumber == 1)
+                chosenTrafficLight = problem.tf1;
+            else if(lightNumber == 2)
+                chosenTrafficLight = problem.tf2;
+            
+            if(chosenTrafficLight != null)
+                problem.turnGreen(chosenTrafficLight);
+            
+        } while(!input.equals("exit"));
     }
     
 }
