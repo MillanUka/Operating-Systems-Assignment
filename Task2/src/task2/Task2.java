@@ -25,7 +25,7 @@ public class Task2 {
         
         while(true) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(300);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Task2.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -35,6 +35,7 @@ public class Request extends Thread {
 
                 banker.releaseResource(customerNo, resourceNo);
                 isRun = false;
+                Thread.currentThread().interrupt();
                 interrupt();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Request.class.getName()).log(Level.SEVERE, null, ex);

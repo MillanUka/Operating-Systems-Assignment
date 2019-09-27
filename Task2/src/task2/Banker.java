@@ -38,7 +38,7 @@ public class Banker {
         }
     }
 
-    public void requestResource(int customerNo, int resourceNo) {
+    public synchronized void requestResource(int customerNo, int resourceNo) {
         if (rule(customerNo, resourceNo)) {
             ++reserved[customerNo][resourceNo];
             --available[resourceNo];
@@ -50,7 +50,7 @@ public class Banker {
             
     }
 
-    public void releaseResource(int customerNo, int resourceNo) {
+    public synchronized void releaseResource(int customerNo, int resourceNo) {
         --reserved[customerNo][resourceNo];
         ++available[resourceNo];
         
@@ -58,7 +58,7 @@ public class Banker {
         System.out.println(available[0]+"\t"+available[1]+"\t"+available[2]+"\n");
     }
 
-    private boolean rule(int customerNo, int resourceNo) {
+    private synchronized boolean rule(int customerNo, int resourceNo) {
         int numberOfAvailable = available[resourceNo];
         int maxNumber = max[customerNo][resourceNo];
         int resservedResource = reserved[customerNo][resourceNo];
