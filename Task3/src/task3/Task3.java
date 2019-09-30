@@ -24,11 +24,7 @@ public class Task3 {
         Scanner scan = new Scanner(System.in);
         
         do {
-            System.out.println("Traffic Light 1");
-            System.out.println(problem.tf1);
-            
-            System.out.println("Traffic Light 1");
-            System.out.println(problem.tf1);
+            System.out.println(problem);
             
             System.out.println("Which light would you like to turn green?(1/2/exit)");
             input = scan.nextLine();
