@@ -16,32 +16,47 @@ public class Task3 {
     /**
      * @param args the command line arguments
      */
+    static TrafficLightProblem problem; 
     public static void main(String[] args) {
         // TODO code application logic here
-        TrafficLightProblem problem = new TrafficLightProblem();
+        TrafficLight tf1 = new TrafficLight();
+        TrafficLight tf2 = new TrafficLight();
+        
+        problem = new TrafficLightProblem(tf1, tf2);
+        
+        tf1.setSemp(problem.semp);
+        tf2.setSemp(problem.semp);
+        
+        tf1.start();
+        tf2.start();
         
         String input = "";
         Scanner scan = new Scanner(System.in);
-        
         do {
             System.out.println(problem);
-            
+
             System.out.println("Which light would you like to turn green?(1/2/exit)");
             input = scan.nextLine();
-            
-            int lightNumber = Integer.parseInt(input);
-            
-            TrafficLight chosenTrafficLight = null;
-            
-            if(lightNumber == 1)
-                chosenTrafficLight = problem.tf1;
-            else if(lightNumber == 2)
-                chosenTrafficLight = problem.tf2;
-            
-            if(chosenTrafficLight != null)
-                problem.turnGreen(chosenTrafficLight);
-            
-        } while(!input.equals("exit"));
+
+            try {
+                int lightNumber = Integer.parseInt(input);
+                TrafficLight chosenTrafficLight = null;
+
+                if (lightNumber == 1) {
+                    chosenTrafficLight = tf1;
+                } else if (lightNumber == 2) {
+                    chosenTrafficLight = tf2;
+                }
+
+                if (chosenTrafficLight != null) {
+                    problem.turnGreen(chosenTrafficLight);
+                    chosenTrafficLight.isRun = true;
+                    chosenTrafficLight.run();
+                }
+            } catch (NumberFormatException ex) {
+
+            }
+
+        } while (!input.equals("exit"));
     }
-    
 }
