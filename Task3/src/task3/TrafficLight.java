@@ -27,28 +27,29 @@ public class TrafficLight extends Thread {
     public Light currentLight = Light.RED;
     public boolean isRun = false;
     public Semaphore semp;
-    public
-            
+    public TrafficLightProblem problem;
+    
     @Override
-    public void run() {
-        while(isRun) {
-            turnGreen(Task3.problem);
+    public synchronized void run() {
+        if(isRun) {
+            turnGreen(problem);
             isRun =false;
         }
     }
     
-    public void turnGreen(TrafficLightProblem problem) {
+    public synchronized void turnGreen(TrafficLightProblem problem) {
         try {
             semp.acquire();            
             currentLight = Light.GREEN;
             
             System.out.println(problem);
-            Thread.sleep(2500);
+            Thread.sleep(3500);
             currentLight = Light.YELLOW;
             System.out.println(problem);
-            Thread.sleep(2500);
+            Thread.sleep(1500);
             currentLight = Light.RED;
             semp.release();
+            System.out.println(problem);
         } catch (InterruptedException ex) {
             Logger.getLogger(TrafficLightProblem.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -56,5 +57,9 @@ public class TrafficLight extends Thread {
     
     public void setSemp(Semaphore semp) {
         this.semp = semp;
+    }
+    
+    public void setProblem(TrafficLightProblem problem) {
+        this.problem = problem;
     }
 }

@@ -6,10 +6,7 @@
 package task3;
 
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import static task3.TrafficLight.ANSI_RESET;
-import task3.TrafficLight.Light;
 
 /**
  *
@@ -65,10 +62,7 @@ public class TrafficLightProblem {
         }
         String string = "";
 
-        string += "\n"
-                + "      []               []\n"
-                + "    [____]           [____]\n"
-                + ".----'  '----.   .----'  '----.\n"
+        string += ".------------.   .------------.\n"
                 + "|    .==.    |   |    .==.    |   \n"
                 + "|   /" + firstRedColour + "####" + ANSI_RESET + "\\   |   |   /" + secondRedColour + "####" + ANSI_RESET + "\\   |\n"
                 + "|   \\" + firstRedColour + "####" + ANSI_RESET + "/   |   |   \\" + secondRedColour + "####" + ANSI_RESET + "/   |\n"
@@ -81,7 +75,7 @@ public class TrafficLightProblem {
                 + "|   /" + firstGreenColour + "####" + ANSI_RESET + "\\   |   |   /" + secondGreenColour + "####" + ANSI_RESET + "\\   |\n"
                 + "|   \\" + firstGreenColour + "####" + ANSI_RESET + "/   |   |   \\" + secondGreenColour + "####" + ANSI_RESET + "/   |\n"
                 + "|    `\"\"`    |   |    `\"\"`    |\n"
-                + "'--.______.--'   '--.______.--'";
+                + "'------------'   '------------'";
         
         return string;
     }
