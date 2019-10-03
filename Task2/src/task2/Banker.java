@@ -92,9 +92,7 @@ public class Banker {
         if (numberOfAvailable > 0) {
             //Checking if the customer current allocated resources is less or equal to the max that they are allowed.
             //If they do then they meet all requirements
-            if (reservedResource <= maxNumber) {
-                return true;
-            }
+            return (reservedResource <= maxNumber);
         }
         
         //If they don't meet the requirements
