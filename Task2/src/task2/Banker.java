@@ -54,10 +54,10 @@ public class Banker {
             // We then generate the request and start the thread for the request.
             ++reserved[customerNo][resourceNo];
             --available[resourceNo];
-            Request res = new Request(customerNo, resourceNo, this);
-            res.start();
+            Request request = new Request(customerNo, resourceNo, this);
+            request.start();
         } else { // If the rules are not meet display a message
-            System.out.println("Customer " + (customerNo+1) + " cannot make this request. The max allowed is " + max[customerNo][resourceNo] + " for resource " + resourceNo + ". There is " + available[resourceNo] + " available of this resource");
+            System.out.println("Customer " + (customerNo+1) + " cannot make this request. The max allowed is " + max[customerNo][resourceNo] + " for resource " + resourceNo + ". There is " + (available[resourceNo]+1) + " available of this resource");
         }
             
     }
