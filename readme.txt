@@ -1,39 +1,37 @@
 This work has been done as a team. 
 
 Members: 
-Millan Uka 17981567
-	
+Millan Uka 17981567	
 Naveed Mirdadi 17976962
 
 
-
 Task1
-	- concatenatefile.sh - The executable file for the task 1 
-	- file1.txt - A test file to use as an input for the concatenatefile program
-	- file2.txt - A test file to use as an input for the concatenatefile program
+	- concatenatefile.sh - The executable file for the task 1(Shell Script). 
+	- file1.txt - A test text file to use as an input for the concatenatefile program
+	- file2.txt - A test text file to use as an input for the concatenatefile program
 
 To run task 1. You need to use a Linux environment, you can run it on a Linux Machine, Virtual Machine, PuTTy or through Git Bash. You may need to change the permission of the
 file by doing "chmod 755 concatenatefile.sh". You can then run the script by entering "/concatenatefile.sh file1.txt file2.txt". You can use your own files or the test files
-provided. It should create an output.txt file adter running the script
+provided. It should create an output.txt file after running the script
 Task2 Directory
 	- Build 
 	- nbproject
 	- src
 		- task2
-			- Banker.java (Java file) All codes have been commented 
-			- Request.java (Java file) All code have been commented 
-	Run the code->	- Task2.java (Java file) All code have been commented  
+			- Banker.java (Java file) 
+			- Request.java (Java file) 
+	Run the code->	- Task2.java (Java file) 
 	- build.xml (XML Document)
 	- manifest.mf (MF File) 
 To run task 2. You need Netbeans. You then open the Task2 Project folder. You can then run the Task2.java driver class. This should then continously display the available resources.
 
 Task3 Directory 
 	- nbproject
-	- scr
+	- src
 		- task3
-	Run the code->	- Task3.java (Java file) All codes have been commented 
-			- TrafficLight.java (Java file) All codes have been commented 
-			- TrafficLightProblem (Java file) All codes have been commented 
+	Run the code->	- Task3.java (Java file) 
+			- TrafficLight.java (Java file) 
+			- TrafficLightProblem (Java file)
 	- build.xml (XML Document)
 	- manifest.mf (MF File) 
 To run task 2. You need Netbeans. You then open the Task3 Project folder. You can then run the Task2.java driver class. This should then show a visual representation of the
